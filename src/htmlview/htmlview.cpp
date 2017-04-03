@@ -16,3 +16,8 @@ void HtmlView::show()
 {
     m_webView->show();
 }
+
+void HtmlView::addModule(const QString &name, QObject *obj)
+{
+
+}

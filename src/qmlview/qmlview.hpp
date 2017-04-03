@@ -12,6 +12,7 @@ public:
 
     void load(const QUrl &url);
     void show();
+    void addModule(const QString &name, QObject *obj);
 
 private:
     QQuickView *m_quickView;

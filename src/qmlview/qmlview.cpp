@@ -1,6 +1,8 @@
 #include "qmlview.hpp"
 
 #include <QQuickView>
+#include <QQmlEngine>
+#include <QQmlContext>
 
 QmlView::QmlView()
 {
@@ -15,4 +17,9 @@ void QmlView::load(const QUrl &url)
 void QmlView::show()
 {
     m_quickView->show();
+}
+
+void QmlView::addModule(const QString &name, QObject *obj)
+{
+    m_quickView->engine()->rootContext()->setContextProperty(name, obj);
 }

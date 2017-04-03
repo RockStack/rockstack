@@ -4,6 +4,9 @@
 #include <htmlview/htmlview.hpp>
 #include <qmlview/qmlview.hpp>
 
+#include <modules/filesystem.hpp>
+#include <modules/process.hpp>
+
 #include <QDebug>
 
 RockStack::RockStack():
@@ -31,6 +34,8 @@ void RockStack::loadApplication(const QString &path)
         platform = new QmlView();
     }
 
+    platform->addModule("process", new Process);
+    platform->addModule("fs", new FileSystem);
     platform->load(m_application->main());
     platform->show();
 }
