@@ -14,5 +14,6 @@ HEADERS += \
     rockstack.hpp \
     platform.hpp
 
+include($$PWD/modules/modules.pri)
 include($$PWD/htmlview/htmlview.pri)
 include($$PWD/qmlview/qmlview.pri)
