@@ -12,6 +12,7 @@ class Process: public QObject
 public:
     explicit Process(QObject *parent = 0);
 
+public slots:
     qint64 exec(const QString &program, const QStringList &arguments);
     void kill(qint64 pid);
     void terminate(qint64 pid);
