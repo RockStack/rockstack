@@ -16,8 +16,6 @@ public slots:
     qint64 exec(const QString &program, const QStringList &arguments);
     void kill(qint64 pid);
     void terminate(qint64 pid);
-    QByteArray readStandardOutput(qint64 pid);
-    QByteArray readStandardError(qint64 pid);
 
 signals:
     void finished(qint64 pid, int exitCode, QProcess::ExitStatus exitStatus);

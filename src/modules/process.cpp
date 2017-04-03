@@ -49,23 +49,3 @@ void Process::terminate(qint64 pid)
         process->terminate();
     }
 }
-
-QByteArray Process::readStandardOutput(qint64 pid)
-{
-    QProcess *process = m_processes[pid];
-    if (process) {
-        return process->readAllStandardOutput();
-    }
-
-    return QByteArray();
-}
-
-QByteArray Process::readStandardError(qint64 pid)
-{
-    QProcess *process = m_processes[pid];
-    if (process) {
-        return process->readAllStandardError();
-    }
-
-    return QByteArray();
-}
