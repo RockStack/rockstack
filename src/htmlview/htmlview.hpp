@@ -4,6 +4,7 @@
 #include <platform.hpp>
 
 class QWebEngineView;
+class QWebChannel;
 
 class HtmlView: public Platform
 {
@@ -16,6 +17,9 @@ public:
 
 private:
     QWebEngineView *m_webView;
+    QWebChannel *m_webChannel;
+
+    void injectModules();
 };
 
 #endif // HTMLVIEW_HPP
