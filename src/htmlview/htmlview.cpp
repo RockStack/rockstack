@@ -6,6 +6,7 @@
 #include <QWebEngineScript>
 #include <QWebEngineScriptCollection>
 #include <QFile>
+#include <QDir>
 
 HtmlView::HtmlView()
 {
@@ -19,7 +20,7 @@ HtmlView::HtmlView()
 
 void HtmlView::load(const QUrl &url)
 {
-    m_webView->load(url);
+    m_webView->load(QUrl::fromUserInput(url.toString(), QDir::currentPath()));
 }
 
 void HtmlView::show()
