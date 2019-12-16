@@ -34,8 +34,8 @@ void RockStack::loadApplication(const QString &path)
         platform = new QmlView();
     }
 
-    platform->addModule("process", new Process);
-    platform->addModule("fs", new FileSystem);
+    platform->addModule("ProcessAPI", new Process);
+    platform->addModule("FileSystemAPI", new FileSystem);
     platform->load(m_application->main());
     platform->show();
 }
