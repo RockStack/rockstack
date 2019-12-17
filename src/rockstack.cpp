@@ -7,6 +7,7 @@
 #include <modules/filesystem.hpp>
 #include <modules/process.hpp>
 
+#include <QDir>
 #include <QDebug>
 
 RockStack::RockStack():
@@ -25,6 +26,8 @@ void RockStack::loadApplication(const QString &path)
     if (!m_application->parseManifest()) {
         qDebug() << "Failed to load manifest file";
     }
+
+    QDir::setCurrent(path);
 
     Platform *platform = NULL;
 
